@@ -1,8 +1,62 @@
-# Miscellaneous
+# ====== FLUTTER/DART ======
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+pubspec.lock  # Controversial - uncomment if you DON'T want to commit it
+
+# ====== BUILD ARTIFACTS ======
+/android/app/debug/
+/android/app/profile/
+/android/app/release/
+/ios/Flutter/.last_build_id
+app.*.symbols
+app.*.map.json
+
+# ====== SECURITY CRITICAL ======
+**/key.properties
+**/*.keystore
+**/*.jks
+**/google-services.json
+**/GoogleService-Info.plist
+**/local.properties  # Android-specific machine config
+
+# ====== PLATFORM-SPECIFIC ======
+# Android
+**/android/gradle.properties
+**/android/.gradle/
+
+# iOS/macOS
+**/ios/Podfile.lock
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/flutter_export_environment.xcconfig
+**/ios/Flutter/Generated.xcconfig
+
+# ====== IDE & TOOLS ======
+# IntelliJ/Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ====== TEMPORARY/MISC ======
 *.class
 *.log
 *.pyc
 *.swp
+*.tmp
+*.bak
+*~
 .DS_Store
 .atom/
 .build/
@@ -11,67 +65,3 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.pub-cache/
-.pub/
-/build/
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-
-
-# ====== SECURITY CRITICAL ======
-# Signing keys & sensitive configs
-**/key.properties
-**/*.keystore
-**/*.jks
-**/google-services.json
-**/GoogleService-Info.plist
-
-# ====== PLATFORM-SPECIFIC ======
-# Android
-**/android/local.properties
-**/android/gradle.properties
-
-# iOS
-**/ios/Flutter/flutter_export_environment.xcconfig
-**/ios/Podfile.lock
-**/ios/.symlinks/
-**/ios/Pods/
-
-# ====== ENVIRONMENT ======
-# VS Code (optional)
-.vscode/*
-!.vscode/settings.json
-!.vscode/launch.json
-
-# ====== TEMP FILES ======
-*.tmp
-*.bak
-*~
