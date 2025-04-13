@@ -1,3 +1,5 @@
+import 'dart:convert'; // Add this import
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +25,7 @@ class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
     emit(FavoriteLoading());
     try {
       final favoritesJson = sharedPreferences.getStringList(AppConstants.favoritesKey) ?? [];
-      final favorites = favoritesJson.map((json) => ProductModel.fromJson(json)).toList();
+      final favorites = favoritesJson.map((json) => _productFromJson(json)).whereType<Product>().toList();
       emit(FavoriteLoaded(favorites: favorites));
     } catch (e) {
       emit(FavoriteError(message: 'Failed to load favorites: $e'));
@@ -56,10 +58,30 @@ class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
   }
 
   Future<void> _saveFavorites(List<Product> favorites) async {
-    final favoritesJson = favorites.map((product) => product.toJson()).toList();
+    final favoritesJson = favorites.map((product) => jsonEncode(product.toJson())).toList();
     await sharedPreferences.setStringList(
       AppConstants.favoritesKey,
       favoritesJson,
     );
+  }
+
+  Product? _productFromJson(String jsonString) {
+    try {
+      final json = jsonDecode(jsonString) as Map<String, dynamic>;
+      return Product(
+        id: json['id'] as int,
+        title: json['title'] as String,
+        price: (json['price'] as num).toDouble(),
+        description: json['description'] as String,
+        category: json['category'] as String,
+        image: json['image'] as String,
+        rating: Rating(
+          rate: (json['rating']['rate'] as num).toDouble(),
+          count: json['rating']['count'] as int,
+        ),
+      );
+    } catch (e) {
+      return null;
+    }
   }
 }

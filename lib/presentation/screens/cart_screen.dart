@@ -70,11 +70,11 @@ class CartScreen extends StatelessWidget {
                     children: [
                       Text(
                         'Total:',
-                        style: Theme.of(context).textTheme.headline6,
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Text(
                         '\$${state.totalPrice.toStringAsFixed(2)}',
-                        style: Theme.of(context).textTheme.headline6?.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               color: Colors.green,
                               fontWeight: FontWeight.bold,
                             ),

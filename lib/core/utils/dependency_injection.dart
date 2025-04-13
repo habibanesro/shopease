@@ -5,6 +5,7 @@ import 'package:shopease/data/datasources/product_remote_data_source.dart';
 import 'package:shopease/data/repositories/product_repository_impl.dart';
 import 'package:shopease/domain/repositories/product_repository.dart';
 import 'package:shopease/domain/usecases/get_products.dart';
+import 'package:shopease/core/constants/app_constants.dart';
 
 final getIt = GetIt.instance;
 

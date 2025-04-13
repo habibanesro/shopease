@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:shopease/core/themes/app_theme.dart';
 import 'package:shopease/core/utils/dependency_injection.dart';
 import 'package:shopease/domain/entities/product.dart';
@@ -12,6 +11,7 @@ import 'package:shopease/presentation/screens/favorites_screen.dart';
 import 'package:shopease/presentation/screens/product_detail_screen.dart';
 import 'package:shopease/presentation/screens/product_list_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shopease/domain/usecases/get_products.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

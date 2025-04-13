@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:shopease/core/constants/app_constants.dart';
 import 'package:shopease/domain/entities/product.dart';
+import 'package:shopease/data/models/product_model.dart';
 
 abstract class ProductRemoteDataSource {
   Future<List<Product>> getProducts();

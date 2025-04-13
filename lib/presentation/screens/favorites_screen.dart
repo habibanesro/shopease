@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:shopease/domain/entities/product.dart';
 import 'package:shopease/presentation/bloc/favorite/favorite_bloc.dart';
 
 class FavoritesScreen extends StatelessWidget {

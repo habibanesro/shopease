@@ -30,12 +30,12 @@ class ProductDetailScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               product.title,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
             Text(
               '\$${product.price.toStringAsFixed(2)}',
-              style: Theme.of(context).textTheme.headline5?.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
                   ),
@@ -43,7 +43,7 @@ class ProductDetailScreen extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               'Description',
-              style: Theme.of(context).textTheme.subtitle1?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
             ),
